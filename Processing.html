@@ -1,1 +1,9 @@
-
+<div class="container"><h2 id="pTitle">Processing / Waiting</h2><div class="loader"></div></div>
+<link rel="stylesheet" href="css/style.css">
+<script>
+ const q=new URLSearchParams(location.search);
+ const next=q.get('next')||'approval.html';
+ const type=q.get('type')||'Processing';
+ document.getElementById('pTitle').innerText=type+" - Waiting";
+ setTimeout(()=>location.href=`approval.html?next=${next}&type=${type}`,2500);
+</script>
